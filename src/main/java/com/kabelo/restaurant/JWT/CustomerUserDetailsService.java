@@ -35,6 +35,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
     }
 
     public com.kabelo.restaurant.POJO.User getUserDetail(){
+
         return userDetail;
     }
 }
