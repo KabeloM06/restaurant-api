@@ -1,11 +1,10 @@
 package com.kabelo.restaurant.rest;
 
+import com.kabelo.restaurant.wrapper.UserWrapper;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RequestMapping(path = "/user")
@@ -16,4 +15,7 @@ public interface UserRest {
 
     @PostMapping(path = "/login")
     public ResponseEntity<String> login(@RequestBody(required = true)Map<String, String> requstMap);
+
+    @GetMapping(path = "/get")
+    public ResponseEntity<List<UserWrapper>> getAllUsers();
 }
